@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import telran.org.scotlandyard.model.BasketState;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,11 +23,22 @@ public class Basket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
 
+    private Date orderDate = new Date();
+
+    private double price;
+
+    @Enumerated(EnumType.STRING)
+    private OrderState state;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id")
+    private Set<TravelCard> travelCards = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "Basket_id")
-    private Set<Good> goods = new HashSet<>();
+    private Map<Catalog, Integer> goods = new HashMap<>();
 
     @Enumerated(EnumType.STRING)
     private BasketState basketState;

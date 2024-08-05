@@ -6,25 +6,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
-@Table(name = "custom")
+@Table(name = "promotions")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Custom {
-
-    @Id()
+public class Promotion {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private double discount;
 
-    private String email;
+    //change the price of each item
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Promotion_id")
+    private Set<Good> promoGoods = new HashSet<>();
 
-    private String phoneNum;
-
-    private String password;
-
-    private String role = "ROLE_CUSTOM";
 }

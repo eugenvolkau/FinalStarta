@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "goods")
 @Setter
@@ -21,9 +23,15 @@ public class Good {
 
     private String description;
 
+    private Date receipt_Data = new Date();
+
     private double price;
+
+    private int count_good;
 
     private String category;
 
     private String image;
+
+
 }
