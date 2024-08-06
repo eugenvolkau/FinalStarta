@@ -22,9 +22,9 @@ public class Custom {
 
     private String email;
 
-    private String phoneNum;
+    private String phone;
 
     private String password;
 
-    private String role = "ROLE_CUSTOM";
+    //private String role = "ROLE_CUSTOM";
 }

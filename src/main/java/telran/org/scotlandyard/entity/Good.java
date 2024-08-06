@@ -23,13 +23,11 @@ public class Good {
 
     private String description;
 
-    private Date receipt_Data = new Date();
-
     private double price;
 
-    private int count_good;
-
     private String category;
+
+    //private Date receipt_Data = new Date();
 
     private String image;
 

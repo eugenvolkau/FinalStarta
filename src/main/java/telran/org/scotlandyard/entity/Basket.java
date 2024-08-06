@@ -29,18 +29,4 @@ public class Basket {
 
     private double price;
 
-    @Enumerated(EnumType.STRING)
-    private OrderState state;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id")
-    private Set<TravelCard> travelCards = new HashSet<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Basket_id")
-    private Map<Catalog, Integer> goods = new HashMap<>();
-
-    @Enumerated(EnumType.STRING)
-    private BasketState basketState;
-
-}
+ }
