@@ -5,28 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import telran.org.scotlandyard.model.BasketState;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "Baskets")
+@Table(name = "Categories")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Basket {
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
-//Date of the Good becomming
-    private Date orderDate = new Date();
-//Price
-    private double price;
+    private String category;
 
- }
+}
